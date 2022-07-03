@@ -30,6 +30,13 @@ const config = {
 		USER: process.env.DB_USER || "root",
 		PASSWORD: process.env.DB_PASS || "",
 	},
+	loginAxios: {
+		URL: process.env.LOGIN_URL,
+	},
+	bcrypt: {
+		ROUND: process.env.BCR_ROUND || 12,
+	},
 };
 
 module.exports = config;
+

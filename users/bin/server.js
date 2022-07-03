@@ -35,16 +35,17 @@ const app = express();
 loaderApp(app);
 
 // start the server
-app.listen(+config.app.PORT, () => {
-  console.clear();
-  // Run server
-  if (process.env.APP_HOST !== "TEST") {
-    console.log(
-      `[INFO] [${new Date().toLocaleString()}] [${config.app.HOST} on port ${
-        config.app.PORT
-      } is Running]`
-    );
-  }
+app.listen(+config.app.PORT, "0.0.0.0", () => {
+	console.clear();
+	// Run server
+	if (process.env.APP_HOST !== "TEST") {
+		console.log(
+			`[INFO] [${new Date().toLocaleString()}] [${config.app.HOST} on port ${
+				config.app.PORT
+			} is Running]`
+		);
+	}
 });
 
 module.exports = app;
+

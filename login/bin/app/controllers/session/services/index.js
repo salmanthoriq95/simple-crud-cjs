@@ -35,7 +35,7 @@ module.exports.sessionService = async (payload) => {
 
 	// when token is not same throw 401
 	if (
-		getTokenInRedis.data !== payload.TOKEN ||
+		(getTokenInRedis && getTokenInRedis.data !== payload.TOKEN) ||
 		getTokenInRedis.key !== payload.KEY
 	) {
 		throw new HttpExpection(401, {
