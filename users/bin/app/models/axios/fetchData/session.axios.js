@@ -10,7 +10,7 @@ const axiosInstance = require("../config");
  * @param {string} payload.key
  * @param {string} payload.ip
  * @param {string} payload.useragent
- * @returns
+ * @returns {Promise<any>}
  */
 module.exports.getSession = async (payload) => {
 	const data = await axiosInstance.get("/session?debug=1", {

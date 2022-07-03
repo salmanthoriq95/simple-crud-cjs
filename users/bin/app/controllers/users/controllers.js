@@ -23,7 +23,6 @@ module.exports.getController = async (req, res, next) => {
 		logger.info("getController");
 		return res.status(200).send(serviceResult);
 	} catch (error) {
-		console.log(error);
 		next(error);
 	}
 };

@@ -42,7 +42,7 @@ module.exports.getValidator = (payload) => {
 		token: Joi.string().required(),
 		key: Joi.string().required(),
 		ip: Joi.string().required(),
-		useragent: Joi.string().required(),
+		useragent: Joi.string(),
 		id: Joi.number().optional(),
 	});
 
@@ -79,7 +79,7 @@ module.exports.postValidator = (payload) => {
 		token: Joi.string().required(),
 		key: Joi.string().required(),
 		ip: Joi.string().required(),
-		useragent: Joi.string().required(),
+		useragent: Joi.string(),
 		username: Joi.string().required(),
 		isAdmin: Joi.boolean().required(),
 		email: Joi.string().email().required(),
@@ -122,7 +122,7 @@ module.exports.putValidator = (payload) => {
 		token: Joi.string().required(),
 		key: Joi.string().required(),
 		ip: Joi.string().required(),
-		useragent: Joi.string().required(),
+		useragent: Joi.string(),
 		id: Joi.number().required(),
 		username: Joi.string().required(),
 		isAdmin: Joi.boolean().required(),
@@ -167,7 +167,7 @@ module.exports.deleteValidator = (payload) => {
 		token: Joi.string().required(),
 		key: Joi.string().required(),
 		ip: Joi.string().required(),
-		useragent: Joi.string().required(),
+		useragent: Joi.string(),
 		id: Joi.number().required(),
 	});
 
