@@ -23,7 +23,7 @@ module.exports.logoutController = async (req, res, next) => {
 		// service
 		await services.logoutService(validateResult);
 
-		logger.info("loginController");
+		logger.info("logoutController");
 		return res.status(200).send(
 			formatReturn({
 				success: true,
