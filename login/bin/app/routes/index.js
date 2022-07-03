@@ -4,8 +4,9 @@
 const { Router } = require("express");
 const router = Router();
 
-const root = require("../controllers/root/_routes.root");
+const loginRoutes = require("../controllers/login/_routes.login");
 
 module.exports = {
-	template: router.use("/", root),
+	login: router.use("/login", loginRoutes),
 };
+

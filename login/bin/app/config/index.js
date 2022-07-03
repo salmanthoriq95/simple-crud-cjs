@@ -30,6 +30,14 @@ const config = {
 		USER: process.env.DB_USER || "root",
 		PASSWORD: process.env.DB_PASS || "",
 	},
+	bcrypt: {
+		ROUND: process.env.BCR_ROUND || 12,
+	},
+	redis: {
+		HOST: process.env.REDIS_HOST,
+		PORT: process.env.REDIS_PORT,
+	},
 };
 
 module.exports = config;
+

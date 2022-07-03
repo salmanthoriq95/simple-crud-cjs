@@ -2,12 +2,19 @@
 "use strict";
 
 /**
- *
+ * @typedef {object} IReturnFormatter Format Interface for retun data
+ * @property {boolean} success
+ * @property {string} [message]
+ * @property {any} [data]
+ */
+
+/**
+ * Formatting return data for all service
  * @param {object} payload
  * @param {boolean} payload.success
  * @param {any} [payload.data]
  * @param {string} [payload.message]
- * @returns {object}
+ * @returns {IReturnFormatter}
  */
 module.exports = (payload) => {
 	return {
@@ -16,3 +23,4 @@ module.exports = (payload) => {
 		data: payload.data,
 	};
 };
+

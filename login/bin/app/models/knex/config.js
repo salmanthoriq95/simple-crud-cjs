@@ -7,11 +7,12 @@ const config = require("../../config");
 module.exports = knex({
 	client: "mysql2",
 	connection: {
-		host: config.mySqlDb.HOST,
-		database: config.mySqlDb.DATABASE,
-		port: +config.mySqlDb.PORT,
-		user: config.mySqlDb.USER,
-		password: config.mySqlDb.PASSWORD,
+		host: config.db.HOST,
+		database: config.db.DATABASE,
+		port: +config.db.PORT,
+		user: config.db.USER,
+		password: config.db.PASSWORD,
 		multipleStatements: true,
 	},
 });
+

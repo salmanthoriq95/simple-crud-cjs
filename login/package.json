@@ -1,31 +1,13 @@
 {
-	"name": "cjs",
-	"version": "1.0.1",
-	"description": "",
+	"name": "login",
+	"version": "1.0.0",
+	"description": "Simple API for Login authentication",
 	"main": "bin/server.js",
 	"scripts": {
 		"help": "sh helper.sh",
-		"del:node_modules": "rm -r -f node_modules/",
-		"del:mongo": "rm -r -f src/app/db.Interface/mongodb/",
-		"del:mysql": "rm -r -f src/app/db.Interface/mySql/",
-		"del:knex": "rm -r -f src/app/db.Interface/knex/",
-		"del:redis": "rm -r -f src/app/db.Interface/redis/",
-		"db:dev:uninstall:all": "npm uninstall mongoose mysql2 knex ioredis",
-		"db:dev:install:all": "npm i -D mongoose mysql2 knex ioredis",
-		"db:install:mysql-only": "npm run del:node_modules && npm run del:redis && npm run del:mongo && npm run del:knex && npm run db:dev:uninstall:all && npm i && npm i mysql2",
-		"db:install:mysql": "npm run del:node_modules && npm run del:mongo && npm run del:knex && npm run db:dev:uninstall:all && npm i && npm i mysql2 ioredis",
-		"db:install:mongo-only": "npm run del:node_modules && npm run del:redis && npm run del:mysql && npm run del:knex && npm run db:dev:uninstall:all && npm i && npm i mongoose",
-		"db:install:mongo": "npm run del:node_modules && npm run del:mysql && npm run del:knex && npm run db:dev:uninstall:all && npm i && npm i mongoose ioredis",
-		"db:install:knex-noredis": "npm run del:node_modules && npm run del:redis && npm run del:mongo && npm run del:mysql && npm run db:dev:uninstall:all && npm i && npm i mysql2 knex",
-		"db:install:knex": "npm run del:node_modules && npm run del:mongo && npm run del:mysql && npm run db:dev:uninstall:all && npm i && npm i mysql2 knex ioredis",
-		"db:install:redis-only": "npm run del:node_modules && npm run del:mongo && npm run del:mysql && npm run del:knex && npm run db:dev:uninstall:all && npm i && npm i ioredis",
 		"test": "jest",
 		"start:dev:win": "set ENV_NAME=dev&&nodemon bin/server",
 		"start:dev:linux": "APP_ENV=dev&&nodemon bin/server",
-		"start:prod:win": "npm run test&&set ENV_NAME=prod&&nodemon bin/server",
-		"start:prod:linux": "npm run test&&ENV_NAME=prod&&nodemon bin/server",
-		"build:win": "sh build.sh %npm_package_name% %npm_package_version%",
-		"build:nexus:win": "sh build.sh %npm_package_name% %npm_package_version%",
 		"deploy": "node bin/server.js",
 		"jsdoc": "rm -rf ./docs/ && jsdoc -c ./jsdoc.json"
 	},
@@ -35,11 +17,16 @@
 	"license": "ISC",
 	"dependencies": {
 		"@types/express": "^4.17.13",
+		"bcryptjs": "^2.4.3",
 		"cors": "^2.8.5",
+		"crypto-js": "^4.1.1",
 		"dotenv": "^16.0.1",
 		"express": "^4.18.1",
+		"ioredis": "^5.1.0",
 		"jest": "^28.1.1",
 		"joi": "^17.6.0",
+		"knex": "^2.1.0",
+		"mysql2": "^2.3.3",
 		"pino": "^8.0.0",
 		"supertest": "^6.2.3"
 	},
@@ -47,8 +34,6 @@
 		"@types/jest": "^28.1.2",
 		"clean-jsdoc-theme": "^4.0.7",
 		"eslint": "^8.18.0",
-		"jsdoc": "^3.6.10",
-		"knex": "^2.1.0",
-		"mysql2": "^2.3.3"
+		"jsdoc": "^3.6.10"
 	}
 }

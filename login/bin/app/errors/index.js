@@ -29,6 +29,7 @@ const { Request, Response, NextFunction } = require("express");
  * @property {string} message 	ID: respon pesan untuk console atau user </br>
  * 								EN: message you want pass to user or console
  * @property {string} [stack] 	ERROR STACK
+ * @property {boolean} [success=false]	Success status
  * @property {string} [data] 	ID: data yang ingin disampaikan kepada user atau console </br>
  * 								EN: data you want pass to user or console
  */
@@ -63,17 +64,24 @@ const ErrorHandle = (error, req, res, next) => {
 		name: error.name,
 		message: error.message,
 		data: error.data,
+		success: false,
 	};
 
-	// logger.errorLog(req.url, req.method, req.headers["user-agent"], req.ip, errorResponse);
-
 	if (req.query.debug === "1") errorResponse.stack = error.stack;
-	// if (req.query.trace === "1") logger.fatalLog(error);
 	if (error.name === "HttpExpection") {
 		return res.status(+error.statusCode).json(errorResponse);
 	}
 
-	return res.status(500).json(req.query.debug === "1" ? errorResponse : { name: "Internal Server Error", message: "Please contact administrator" });
+	return res.status(500).json(
+		req.query.debug === "1"
+			? errorResponse
+			: {
+					success: false,
+					name: "Internal Server Error",
+					message: "Please contact administrator",
+			  }
+	);
 };
 
 module.exports = ErrorHandle;
+
