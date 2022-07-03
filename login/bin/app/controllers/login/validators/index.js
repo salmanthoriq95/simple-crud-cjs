@@ -19,7 +19,7 @@ const HttpExpection = require("../../../errors/HttpExpection");
  * @param {*} payload
  * @returns {ILoginInput}
  */
-module.exports.postValidator = (payload) => {
+module.exports.loginValidator = (payload) => {
 	const schema = Joi.object({
 		debug: Joi.number().valid(1).optional(),
 		trace: Joi.number().valid(1).optional(),

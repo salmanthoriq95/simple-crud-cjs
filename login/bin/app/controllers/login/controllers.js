@@ -19,7 +19,7 @@ const formatReturn = require("../../utilities/return.formatter");
 module.exports.loginController = async (req, res, next) => {
 	try {
 		// validating and formatting inputs
-		const validateResult = validators.postValidator(req);
+		const validateResult = validators.loginValidator(req);
 		// service
 		const serviceResult = await services.loginService(validateResult);
 		res.cookie("TOKEN", serviceResult.token, {

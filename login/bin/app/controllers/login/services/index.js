@@ -28,6 +28,7 @@ module.exports.loginService = async (payload) => {
 	const userData = await getUserData(payload.username);
 	const username =
 		userData && userData.username ? userData.username : payload.username;
+
 	// Prevent Bruteforce
 	await requestLimiter.initAttempByUsername(
 		username,
@@ -53,7 +54,7 @@ module.exports.loginService = async (payload) => {
 
 	// Create Header response
 	const token = tokenGenerator.generateToken(userData.id, userData.isAdmin);
-	console.log(payload);
+
 	// store token in redis
 	await tokenGenerator.writeTokenInRedis(
 		payload.ip,
