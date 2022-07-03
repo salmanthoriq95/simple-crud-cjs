@@ -13,4 +13,3 @@ module.exports = {
 	logout: router.use("/logout", logoutRoutes),
 	session: router.use("/session", sessionRoutes),
 };
-

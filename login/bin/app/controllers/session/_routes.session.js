@@ -9,4 +9,3 @@ const controllers = require("./controllers");
 router.get("/", controllers.sessionController);
 
 module.exports = router;
-

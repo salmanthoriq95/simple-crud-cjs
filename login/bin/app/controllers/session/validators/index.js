@@ -46,4 +46,3 @@ module.exports.sessionValidator = (payload) => {
 
 	return validate.value;
 };
-

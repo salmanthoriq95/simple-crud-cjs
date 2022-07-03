@@ -41,4 +41,3 @@ describe("HTTP Request /login", () => {
 			.expect(422, done);
 	});
 });
-

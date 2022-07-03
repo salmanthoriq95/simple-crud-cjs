@@ -19,7 +19,14 @@
 			"default_theme": "dark",
 			"title": "Dev Documentations",
 			"footer": "Generated using <a href=\"https://www.npmjs.com/package/jsdoc\"><strong>jsDoc</strong></a> and <a href=\"https://www.npmjs.com/package/clean-jsdoc-theme\"><strong>clean-jsdoc-theme</strong></a> template. Thank's Dev, very helpful!",
-			"sections": ["Namespaces", "Modules", "Classes", "Interfaces", "Tutorials", "Global"],
+			"sections": [
+				"Namespaces",
+				"Modules",
+				"Classes",
+				"Interfaces",
+				"Tutorials",
+				"Global"
+			],
 			"favicon": "C:\\Users\\salma\\Downloads\\icon.ico",
 			"create_style": "p .description {font-size: 1em} footer {font-size: 0.6em; text-align: center}",
 			"menu": [

@@ -67,4 +67,3 @@ const loaderApp = (app) => {
 };
 
 module.exports = loaderApp;
-

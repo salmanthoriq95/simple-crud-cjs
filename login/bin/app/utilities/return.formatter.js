@@ -23,4 +23,3 @@ module.exports = (payload) => {
 		data: payload.data,
 	};
 };
-

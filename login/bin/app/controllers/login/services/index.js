@@ -75,4 +75,3 @@ module.exports.loginService = async (payload) => {
 		key: token.key,
 	};
 };
-

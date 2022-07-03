@@ -34,4 +34,3 @@ module.exports.logoutController = async (req, res, next) => {
 		next(error);
 	}
 };
-

@@ -41,4 +41,3 @@ describe("HTTP Request /logout", () => {
 			.expect(200, done);
 	});
 });
-

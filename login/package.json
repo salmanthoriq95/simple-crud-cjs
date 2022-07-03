@@ -12,8 +12,10 @@
 		"jsdoc": "rm -rf ./docs/ && jsdoc -c ./jsdoc.json"
 	},
 	"type": "commonjs",
-	"keywords": [],
-	"author": "",
+	"keywords": [
+		"authrnticator"
+	],
+	"author": "Salman Thoriq Al Farisyi",
 	"license": "ISC",
 	"dependencies": {
 		"@types/express": "^4.17.13",

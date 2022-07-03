@@ -38,4 +38,3 @@ module.exports.loginController = async (req, res, next) => {
 		next(error);
 	}
 };
-

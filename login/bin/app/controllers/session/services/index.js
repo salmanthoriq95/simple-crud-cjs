@@ -48,4 +48,3 @@ module.exports.sessionService = async (payload) => {
 	// return data id and role
 	return tokenValue;
 };
-

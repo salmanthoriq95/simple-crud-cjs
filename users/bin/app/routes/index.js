@@ -4,8 +4,9 @@
 const { Router } = require("express");
 const router = Router();
 
-const root = require("../controllers/root/_routes.root");
+const usersRoutes = require("../controllers/users/_routes.users");
 
 module.exports = {
-	template: router.use("/", root),
+	users: router.use("/users", usersRoutes),
 };
+

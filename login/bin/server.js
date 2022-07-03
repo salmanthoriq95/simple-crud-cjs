@@ -40,4 +40,3 @@ app.listen(+config.app.PORT, () => {
 });
 
 module.exports = app;
-

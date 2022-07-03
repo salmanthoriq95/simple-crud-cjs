@@ -33,4 +33,3 @@ module.exports.logoutService = async (payload) => {
 		);
 	}
 };
-

@@ -46,4 +46,3 @@ module.exports.logoutValidator = (payload) => {
 
 	return validate.value;
 };
-

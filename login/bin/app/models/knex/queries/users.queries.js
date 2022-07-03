@@ -32,4 +32,3 @@ module.exports.getDataById = async (id) => {
 		.where(table.PROPERTIES.COLOUMNS.ID, id)
 		.first();
 };
-

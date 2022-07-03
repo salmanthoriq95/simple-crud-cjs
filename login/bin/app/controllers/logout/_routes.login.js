@@ -9,4 +9,3 @@ const controllers = require("./controllers");
 router.delete("/", controllers.logoutController);
 
 module.exports = router;
-

@@ -41,4 +41,3 @@ describe("HTTP Request /session", () => {
 			.expect(200, done);
 	});
 });
-

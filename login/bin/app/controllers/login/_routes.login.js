@@ -9,4 +9,3 @@ const controllers = require("./controllers");
 router.post("/", controllers.loginController);
 
 module.exports = router;
-
