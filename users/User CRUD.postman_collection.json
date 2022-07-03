@@ -1,0 +1,730 @@
+{
+	"info": {
+		"_postman_id": "f118b6f1-3cf7-462a-bd44-bc6b6568d230",
+		"name": "User CRUD",
+		"description": "Before request to modify users, make sure you logged in first using existence credential. and in every request you must pass token and key into header that you get by logged in with your credential",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15075608"
+	},
+	"item": [
+		{
+			"name": "Get Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{localDomain}}:{{localuserPort}}/users/",
+					"host": [
+						"{{localDomain}}"
+					],
+					"port": "{{localuserPort}}",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "473"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d9-yt9qKrj2Oe5npPIo3Kj7hl41Zm0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:21:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"success get data\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"admin\",\n            \"isAdmin\": 1,\n            \"email\": \"admin@admin.com\",\n            \"password\": \"$2a$12$WVE1eY6NLs/zbC0.gGgV7uLSf.yGerJgmeycDmzX75VWiMoPFM/1a\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"user\",\n            \"isAdmin\": 0,\n            \"email\": \"user@user.com\",\n            \"password\": \"$2a$12$qDrWAwyfPwu3hhLC0xQmy.zT.UMLYfoTH8vCOdY8ZNrPGbl26LQsC\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"salman\",\n            \"isAdmin\": 1,\n            \"email\": \"salman@admin.com\",\n            \"password\": \"$2a$12$6DAh3vdQapI3lXYMd8hDTOm8AZs2Lj.gC7uvdfVAKBjnT4rmO9nAO\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-+R40niuSF8bE+U5N2V//XNLbCZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:22:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"name\": \"HttpExpection\",\n    \"message\": \"Access denied!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"other user\",\r\n    \"isAdmin\": false,\r\n    \"email\": \"other.user@user.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localDomain}}:{{localuserPort}}/users",
+					"host": [
+						"{{localDomain}}"
+					],
+					"port": "{{localuserPort}}",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"other user\",\r\n    \"isAdmin\": false,\r\n    \"email\": \"other.user@user.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-XyzCJ4qsj6pidajh+8YoGx0Ypio\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:21:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"success add data\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"other user\",\r\n    \"isAdmin\": false,\r\n    \"email\": \"other.user@user.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-+R40niuSF8bE+U5N2V//XNLbCZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:22:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"name\": \"HttpExpection\",\n    \"message\": \"Access denied!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Put User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"salman\",\r\n    \"isAdmin\": true,\r\n    \"email\": \"salman@admin.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localDomain}}:{{localuserPort}}/users/3",
+					"host": [
+						"{{localDomain}}"
+					],
+					"port": "{{localuserPort}}",
+					"path": [
+						"users",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"salman\",\r\n    \"isAdmin\": true,\r\n    \"email\": \"salman@admin.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/3",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-eH8iBrgCB+Bem90KjAPYwnb2CY8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:21:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"success edit data\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"salman\",\r\n    \"isAdmin\": true,\r\n    \"email\": \"salman@admin.com\",\r\n    \"password\": \"asdf1234*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/3",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								"3"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-+R40niuSF8bE+U5N2V//XNLbCZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:23:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"name\": \"HttpExpection\",\n    \"message\": \"Access denied!\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Del User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "key",
+						"value": "{{key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{localDomain}}:{{localuserPort}}/users/4",
+					"host": [
+						"{{localDomain}}"
+					],
+					"port": "{{localuserPort}}",
+					"path": [
+						"users",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/4",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-xpHirGweQsdJ2SxV1UvVS7KSjaE\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:22:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"success delete data\"\n}"
+				},
+				{
+					"name": "401",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{token}}",
+								"type": "text"
+							},
+							{
+								"key": "key",
+								"value": "{{key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{localDomain}}:{{localuserPort}}/users/4",
+							"host": [
+								"{{localDomain}}"
+							],
+							"port": "{{localuserPort}}",
+							"path": [
+								"users",
+								"4"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"43-+R40niuSF8bE+U5N2V//XNLbCZA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 03 Jul 2022 21:23:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"name\": \"HttpExpection\",\n    \"message\": \"Access denied!\"\n}"
+				}
+			]
+		}
+	]
+}
