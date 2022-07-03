@@ -1,0 +1,44 @@
+{
+	"recurseDepth": 10,
+	"source": {
+		"include": ["./bin/"],
+		"exclude": ["./node_modules/", "./docs/", "./documentation/"]
+	},
+	"sourceType": "module",
+	"tags": {
+		"allowUnknownTags": true,
+		"dictionaries": ["jsdoc", "closure"]
+	},
+	"opts": {
+		"markdown": {
+			"hardwrap": false,
+			"idInHeadings": true
+		},
+		"theme_opts": {
+			"base_url": "./index.html",
+			"default_theme": "dark",
+			"title": "Dev Documentations",
+			"footer": "Generated using <a href=\"https://www.npmjs.com/package/jsdoc\"><strong>jsDoc</strong></a> and <a href=\"https://www.npmjs.com/package/clean-jsdoc-theme\"><strong>clean-jsdoc-theme</strong></a> template. Thank's Dev, very helpful!",
+			"sections": ["Namespaces", "Modules", "Classes", "Interfaces", "Tutorials", "Global"],
+			"favicon": "C:\\Users\\salma\\Downloads\\icon.ico",
+			"create_style": "p .description {font-size: 1em} footer {font-size: 0.6em; text-align: center}",
+			"menu": [
+				{
+					"title": "GitHub",
+					"link": "https://github.com/salmanthoriq95",
+					"target": "_blank"
+				},
+				{
+					"title": "GitLab",
+					"link": "https://gitlab.com/salmanthoriq95",
+					"target": "_blank"
+				}
+			]
+		},
+		"verbose": true,
+		"readme": "./jsdoc.md",
+		"recurse": true,
+		"destination": "./docs/dev",
+		"template": "./node_modules/clean-jsdoc-theme"
+	}
+}
