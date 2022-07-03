@@ -75,17 +75,14 @@ const ErrorHandle = (error, req, res, next) => {
 		return res.status(+error.statusCode).json(errorResponse);
 	}
 
-	return res
-		.status(500)
-		.json(
-			req.query.debug === "1"
-				? errorResponse
-				: {
-						name: "Internal Server Error",
-						message: "Please contact administrator",
-				  }
-		);
+	return res.status(500).json(
+		req.query.debug === "1"
+			? errorResponse
+			: {
+					name: "Internal Server Error",
+					message: "Please contact administrator",
+			  }
+	);
 };
 
 module.exports = ErrorHandle;
-

@@ -190,4 +190,3 @@ module.exports.deleteValidator = (payload) => {
 
 	return validate.value;
 };
-

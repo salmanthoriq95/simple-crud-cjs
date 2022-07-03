@@ -12,4 +12,3 @@ router.put("/:id", controllers.putController);
 router.delete("/:id", controllers.deleteController);
 
 module.exports = router;
-

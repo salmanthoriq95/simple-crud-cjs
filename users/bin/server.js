@@ -48,4 +48,3 @@ app.listen(+config.app.PORT, "0.0.0.0", () => {
 });
 
 module.exports = app;
-

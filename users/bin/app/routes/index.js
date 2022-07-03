@@ -9,4 +9,3 @@ const usersRoutes = require("../controllers/users/_routes.users");
 module.exports = {
 	users: router.use("/users", usersRoutes),
 };
-

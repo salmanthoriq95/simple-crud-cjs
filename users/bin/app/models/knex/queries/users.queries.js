@@ -58,4 +58,3 @@ module.exports.deleteData = async (id) => {
 		.where(table.PROPERTIES.COLOUMNS.ID, id)
 		.del();
 };
-

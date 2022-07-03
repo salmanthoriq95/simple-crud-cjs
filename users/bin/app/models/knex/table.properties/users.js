@@ -29,4 +29,3 @@ const usersTable = new UsersTable();
 module.exports = usersTable;
 module.exports.default = usersTable;
 module.exports.properties = usersTable.PROPERTIES;
-
