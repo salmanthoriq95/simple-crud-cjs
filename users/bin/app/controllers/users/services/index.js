@@ -34,7 +34,7 @@ module.exports.getService = async (payload) => {
 	if (!sessionData.data.isAdmin && !payload.id)
 		throw new HttpExpection(401, { message: "Access denied!" });
 
-	if (+payload.id !== +sessionData.data.id)
+	if (payload.id && +payload.id !== +sessionData.data.id)
 		throw new HttpExpection(401, { message: "Access denied!" });
 
 	const dataUser = await getData(payload.id);
