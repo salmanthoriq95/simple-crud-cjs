@@ -2,8 +2,6 @@
 "use strict";
 
 const { getDataById } = require("../../../models/knex/queries/users.queries");
-const { compareHashBcrypt } = require("../../../utilities/bcrypt.hashing");
-const requestLimiter = require("../../../utilities/request.limiter");
 const HttpExpection = require("../../../errors/HttpExpection");
 const tokenGenerator = require("../../../utilities/token.generator");
 

@@ -1,9 +1,6 @@
 // @ts-check
 "use strict";
 
-// Import config
-const config = require("../config");
-
 // Import error handler
 const HttpExpection = require("../errors/HttpExpection");
 
