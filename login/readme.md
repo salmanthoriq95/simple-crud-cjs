@@ -1,52 +1,75 @@
-# NODE JS TEMPLATE [![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/salmanthoriq95/templates/node-cjs?style=for-the-badge)](https://github.com/salmanthoriq95/templates/tree/node-cjs)
+# LOGIN API (AUTHENTICATOR)
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/far_is_man?style=flat-square)](https://twitter.com/far_is_man)
-[![GitHub last commit](https://img.shields.io/github/last-commit/salmanthoriq95/templates/node-cjs?style=flat-square)](https://github.com/salmanthoriq95/templates/graphs/commit-activity)
 [![Node](https://img.shields.io/badge/nodejs-%3E%3D16.5.5-brightgreen?style=flat-square&logo=Node.js&logoColor=white)](https://nodejs.org/en/)
-[![CodeFactor](https://www.codefactor.io/repository/github/salmanthoriq95/templates/badge?style=flat-square)](https://www.codefactor.io/repository/github/salmanthoriq95/templates)
 
 ---
 
 ## :books: Description
 
-:runner: **Jump to** — [Installation](#installation) · [API](#api) · [Credits](#credits) · [License](#license)
+This API is use for authenticating user then validate the role and verify the token.
+Before each request you can get the token in here, and the session will storage in
+Redis. For testing you can use this credential below
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+### **Credentials**
+
+| USERNAME | PASSWORD | DESCRIPTION    |
+| -------- | -------- | -------------- |
+| admin    | admin    | For Admin rule |
+| user     | user     | For Admin rule |
+
+### **Spesification**
+
+- bcryptjs: "^2.4.3",
+- cors: "^2.8.5",
+- crypto-js: "^4.1.1",
+- dotenv: "^16.0.1",
+- express: "^4.18.1",
+- ioredis: "^5.1.0",
+- jest: "^28.1.1",
+- joi: "^17.6.0",
+- knex: "^2.1.0",
+- mysql2: "^2.3.3",
+- pino: "^8.0.0",
+- supertest: "^6.2.3"
 
 ---
 
 ## :building_construction: Installation
 
+### **Developing**
+
+If you want to developing this API, you can run :
+
 ```bash
-echo "hello world"
+npm run i -f -D
+
 ```
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+to install all dependencies and devDependencies then ignore the `package-lock.json`.
+So we use the latest version of libraries that more stable than this API built before.
+
+### **Deployment**
 
 ## :factory: API
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+This is available end point for this API
 
-## :beer: Credits
+| METHOD                   | END POINT                 | DESCRIPTION          |
+| ------------------------ | ------------------------- | -------------------- |
+| [POST](#post-login)      | [/login](#post-login)     | Create new user data |
+| [DELETE](#delete-logout) | [/logout](#delete-logout) | Delete a user data   |
+| [GET](#get-session)      | [/session](#get-session)  | Delete a user data   |
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+### **POST _/login_**
+
+### **DELETE _/logout_**
+
+### **GET _/session_**
 
 ## :statue_of_liberty: License
 
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+THIS IS FREE TO USE!!
 
-## SPECIFICATION
+Please do anything you want with this repo
 
-this is backend template using :
-
-1. Language : NodeJs
-2. Server Framework : ExpressJs
-3. Logger : Native NodeJs
-4. Debugger : Native NodeJs
-5. Validator : Joi
-6. Database : MySQL2, knex, mongoose, ioredis
-7. Unit Test : Supertest and Jest
-8. Dev Documentation : JsDoc
-9. User Documentation : Postman
-10. Another Dependecies :
-    - cli-color
