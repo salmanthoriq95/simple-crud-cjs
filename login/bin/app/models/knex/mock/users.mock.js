@@ -46,3 +46,10 @@ module.exports.getUserData = async (usernameOrEmail) => {
 		},
 	];
 };
+
+module.exports.getDataById = async (id) => {
+	if (id) {
+		return { username: "admin" };
+	}
+	return undefined;
+};

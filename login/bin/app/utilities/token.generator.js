@@ -42,14 +42,18 @@ class TokenGenerator {
 	 * @returns {*}
 	 */
 	decryptToken(token, key) {
-		// decrypt use crypto-js
-		const firstDecrypt = this.decrptCryptoJs(token, key);
-		const firstDecrptedData = JSON.parse(JSON.parse(firstDecrypt.toString()));
+		try {
+			// decrypt use crypto-js
+			const firstDecrypt = this.decrptCryptoJs(token, key);
+			const firstDecrptedData = JSON.parse(JSON.parse(firstDecrypt.toString()));
 
-		// decrypt using native nodeJS
-		const decryptData = this.decryptCryptoNative(firstDecrptedData);
+			// decrypt using native nodeJS
+			const decryptData = this.decryptCryptoNative(firstDecrptedData);
 
-		return decryptData;
+			return decryptData;
+		} catch (err) {
+			return { success: false };
+		}
 	}
 
 	/**
@@ -174,10 +178,24 @@ class TokenGenerator {
 	 * @param {string} useragent
 	 * @return {Promise<{data: string, key:string}>} tokenData
 	 */
-	async getTokenInRedis(ip, useragent) {
-		const tokenData = await redis.getDataByKeyName(`${ip}-${useragent}`);
+	async getTokenInRedis(ip, useragent, username) {
+		const tokenData = await redis.getDataByKeyName(
+			`${ip}-${useragent}-${username}`
+		);
 		const data = JSON.parse(tokenData);
 		return data;
+	}
+
+	/**
+	 * deleting token in redis by it keyname
+	 * @param {string} ip
+	 * @param {string} useragent
+	 * @param {string} username
+	 */
+	async delTokenInRedis(ip, useragent, username) {
+		const tokenData = await redis.delDataByKey(
+			`${ip}-${useragent}-${username}`
+		);
 	}
 }
 
