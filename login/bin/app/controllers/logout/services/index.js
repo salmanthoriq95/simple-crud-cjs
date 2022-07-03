@@ -15,10 +15,9 @@ const tokenGenerator = require("../../../utilities/token.generator");
  */
 module.exports.logoutService = async (payload) => {
 	// Decrypt token
-	// BUG: Bug when token is cant be decrypted
 	const decryptToken = tokenGenerator.decryptToken(payload.TOKEN, payload.KEY);
 	if (decryptToken.success && decryptToken.success === false)
-		throw new HttpExpection(400, {
+		throw new HttpExpection(401, {
 			message: "Invalid Token!",
 		});
 	const tokenValue = JSON.parse(decryptToken);
