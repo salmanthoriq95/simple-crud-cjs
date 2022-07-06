@@ -57,7 +57,7 @@ module.exports.loginService = async (payload) => {
 
 	// store token in redis
 	await tokenGenerator.writeTokenInRedis(
-		payload.ip,
+		"",
 		payload.useragent,
 		username,
 		token

@@ -7,7 +7,8 @@
 		"test": "jest",
 		"start:dev:win": "set ENV_NAME=dev&&nodemon bin/server",
 		"start:dev:linux": "APP_ENV=dev&&nodemon bin/server",
-		"jsdoc": "rm -rf ./docs/ && jsdoc -c ./jsdoc.json"
+		"jsdoc": "rm -rf ./docs/ && jsdoc -c ./jsdoc.json",
+		"build:win": "sh build.sh %npm_package_name% %npm_package_version%"
 	},
 	"type": "commonjs",
 	"keywords": [

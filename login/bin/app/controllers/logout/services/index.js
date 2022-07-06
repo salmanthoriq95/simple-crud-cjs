@@ -27,7 +27,7 @@ module.exports.logoutService = async (payload) => {
 	// delete token data in redis
 	if (getDataUser) {
 		await tokenGenerator.delTokenInRedis(
-			payload.ip,
+			"",
 			payload.useragent,
 			getDataUser.username
 		);

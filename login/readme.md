@@ -63,6 +63,8 @@ This is available end point for this API
 
 ### **POST _/login_**
 
+This end point is use to get token and key that will pass into request header for every request we'll make, and the token will store in redis for 24 hours. For default credential please check [credentials](#credentials)
+
 ### **DELETE _/logout_**
 
 ### **GET _/session_**

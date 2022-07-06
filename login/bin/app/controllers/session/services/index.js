@@ -28,7 +28,7 @@ module.exports.sessionService = async (payload) => {
 	const getDataUser = await getDataById(tokenValue.id);
 	// get data by ip and useragent in redis
 	const getTokenInRedis = await tokenGenerator.getTokenInRedis(
-		payload.ip,
+		"",
 		payload.useragent,
 		getDataUser.username
 	);
