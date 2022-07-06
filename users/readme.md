@@ -49,7 +49,7 @@ So we use the latest version of libraries that more stable than this API built b
 
 ## :factory: API
 
-This is available end point for this API
+This is available end point for users API
 
 | METHOD            | END POINT             | DESCRIPTION          |
 | ----------------- | --------------------- | -------------------- |
@@ -122,6 +122,26 @@ This end Point is use for create new user data. Only admin can access it.
 | ------ | --------- | ----------------------- |
 | POST   | /users/   | Create new data of user |
 
+#### **Body Payload**
+
+| KEY      | DATA TYPE | REQUIRED                        | DESCRIPTION      |
+| -------- | --------- | ------------------------------- | ---------------- |
+| username | string    | :ballot_box_with_check: **YES** | username of user |
+| isAdmin  | boolean   | :ballot_box_with_check: **YES** | role of user     |
+| email    | string    | :ballot_box_with_check: **YES** | email of user    |
+| password | string    | :ballot_box_with_check: **YES** | password of user |
+
+example:
+
+```json
+{
+	"username": "salman",
+	"isAdmin": true,
+	"email": "salman@admin.com",
+	"password": "asdf1234*"
+}
+```
+
 #### **Example 200 (_OK_)**
 
 ```json
@@ -151,6 +171,38 @@ This end point is use for updating a data of user, only admin can access it.
 | ------ | ---------- | --------------------- |
 | PUT    | /users/:id | Updating data of user |
 
+#### **Params Payload**
+
+| KEY | DATA TYPE | REQUIRED                        | DESCRIPTION |
+| --- | --------- | ------------------------------- | ----------- |
+| :id | number    | :ballot_box_with_check: **YES** | id of user  |
+
+example:
+
+```
+/users/3
+```
+
+#### **Body Payload**
+
+| KEY      | DATA TYPE | REQUIRED                        | DESCRIPTION      |
+| -------- | --------- | ------------------------------- | ---------------- |
+| username | string    | :ballot_box_with_check: **YES** | username of user |
+| isAdmin  | boolean   | :ballot_box_with_check: **YES** | role of user     |
+| email    | string    | :ballot_box_with_check: **YES** | email of user    |
+| password | string    | :ballot_box_with_check: **YES** | password of user |
+
+example:
+
+```json
+{
+	"username": "salman",
+	"isAdmin": true,
+	"email": "salman@admin.com",
+	"password": "asdf1234*"
+}
+```
+
 #### **Example 200 (_OK_)**
 
 ```json
@@ -179,6 +231,18 @@ This end point is use for deleting a data of users, only admin can access it.
 | METHOD | END POINT  | DESCRIPTION           |
 | ------ | ---------- | --------------------- |
 | DELETE | /users/:id | Deleting data of user |
+
+#### **Params Payload**
+
+| KEY | DATA TYPE | REQUIRED                        | DESCRIPTION |
+| --- | --------- | ------------------------------- | ----------- |
+| :id | number    | :ballot_box_with_check: **YES** | id of user  |
+
+example:
+
+```
+/users/3
+```
 
 #### **Example 200 (_OK_)**
 

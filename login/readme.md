@@ -65,9 +65,88 @@ This is available end point for this API
 
 This end point is use to get token and key that will pass into request header for every request we'll make, and the token will store in redis for 24 hours. For default credential please check [credentials](#credentials)
 
+#### **End Point**
+
+| METHOD | END POINT | DESCRIPTION           |
+| ------ | --------- | --------------------- |
+| POST   | /login    | Login with credential |
+
+#### **Body Payload**
+
+| KEY      | DATA TYPE | REQUIRED                        | DESCRIPTION                             |
+| -------- | --------- | ------------------------------- | --------------------------------------- |
+| username | string    | :ballot_box_with_check: **YES** | can fill with username or email of user |
+| password | string    | :ballot_box_with_check: **YES** | password of user                        |
+
+example:
+
+```json
+{
+	"username": "admin",
+	"password": "admin"
+}
+```
+
+#### **Example 200 (_OK_)**
+
+```json
+{
+	"success": true,
+	"message": "Login successful!"
+}
+```
+
+#### **Example 422 (_Unauthorized_)**
+
+```json
+{
+	"name": "HttpExpection",
+	"message": "Login Failed! Invalid Username or Password",
+	"success": false
+}
+```
+
 ### **DELETE _/logout_**
 
+This end point delete all session stored in redis.
+
+#### **End Point**
+
+| METHOD | END POINT | DESCRIPTION          |
+| ------ | --------- | -------------------- |
+| DELETE | /logout   | destroy your session |
+
+#### **Example 200 (_OK_)**
+
+```json
+{
+	"success": true,
+	"message": "Logout successful!"
+}
+```
+
 ### **GET _/session_**
+
+Check session of user, check token that passed inside headers
+
+#### **End Point**
+
+| METHOD | END POINT | DESCRIPTION                       |
+| ------ | --------- | --------------------------------- |
+| GET    | /session  | check token passed inside headers |
+
+#### **Example 200 (_OK_)**
+
+```json
+{
+	"success": true,
+	"message": "Session successful!",
+	"data": {
+		"id": 1,
+		"isAdmin": 1
+	}
+}
+```
 
 ## :statue_of_liberty: License
 
