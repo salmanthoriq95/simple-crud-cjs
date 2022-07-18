@@ -1,6 +1,6 @@
 # NODE JS TEMPLATE [![GitHub package.json version](https://img.shields.io/github/package-json/v/salmanthoriq95/simple-crud-cjs?style=for-the-badge)](https://github.com/salmanthoriq95/simple-crud-cjs)
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/far_is_man?style=flat-square)](https://twitter.com/far_is_man)
+[![Twitter Follow](https://img.shields.io/twitter/follow/far_is_man?style=flat-square&logo=twitter)](https://twitter.com/far_is_man)
 [![GitHub last commit](https://img.shields.io/github/last-commit/salmanthoriq95/simple-crud-cjs?style=flat-square)](https://github.com/salmanthoriq95/simple-crud-cjs/graphs/commit-activity)
 [![Node](https://img.shields.io/badge/nodejs-%3E%3D16.5.5-brightgreen?style=flat-square&logo=JavaScript)](https://nodejs.org/en/)
 [![CodeFactor](https://www.codefactor.io/repository/github/salmanthoriq95/simple-crud-cjs/badge?style=flat-square)](https://www.codefactor.io/repository/github/salmanthoriq95/simple-crud-cjs)
